@@ -168,10 +168,19 @@ window.onload = function () {
       // Task 1.2: Render a user greeting to `#userGreeting` 
       // using `firstName`, `lastName`, and the server-provided
       // login timestamp.
+
+      // server.js line 34 stores loginTime in ISO format! (ISOString() returns date object as String)
+      // .textContent all that's missing, ready to enter message
+      const loginDate = new Date(currentSession.loginTime);
+
+      // backticks for template literals (dynamic message); .toISOString() will not work without .toLocaleDate/TimeString having specification in round brackets 
+      greetingElement.textContent = `Hi ${currentSession.firstName} ${currentSession.lastName}, du hast dich am ${loginDate.toLocaleDateString("de-DE")} um ${loginDate.toLocaleTimeString("de-DE")} angemeldet.`;
+
     } else {
       greetingElement.textContent = messages.loggedOutGreeting;
     }
   }
+
 
   function updateUI() {
     const authBtn = document.getElementById('authBtn');
@@ -227,7 +236,7 @@ window.onload = function () {
 
       .then(response => {
         if (!response.ok) { // first catch potential issue
-          throw new Error('HTTP ${response.status}'); // check if best way
+          throw new Error(`HTTP ${response.status}`); // check if best way
         }
         return response.json();
       })

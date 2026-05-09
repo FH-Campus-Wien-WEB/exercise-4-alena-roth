@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movies!</title>
-    <link rel="stylesheet" href="index.css" />
-    <script type="module" src="index.js"></script>
-  </head>
 
-  <body>
-    <header>
-      <h1>Movies!</h1>
-      <div id="userGreeting" class="user-greeting"></div>
-    </header>
-    <nav>
-      <h2>Genres</h2>
-      <ul id="filter"></ul>
-      <h2>Manage</h2>
-      <ul>
-        <li>
-          <button id="addMoviesBtn">Add movies</button>
-        </li>
-        <li>
-          <button id="authBtn">Login</button>
-        </li>
-      </ul>
-    </nav>
-    <main></main>
-    <footer>
-      <ul>
-        <li>&copy; Movies!</li>
-        <li>&#8213;</li>
-        <li>Written by <a href="mailto:jane.doe@example.com">Jane Doe</a></li>
-        <li>&#8213;</li>
-        <li>
-          Visit us at
-          <a href="https://www.hcw.ac.at/" target="_blank">UAS Campus Vienna</a>
-        </li>
-      </ul>
-    </footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movies!</title>
+  <link rel="stylesheet" href="index.css" />
+  <script type="module" src="index.js"></script>
+</head>
 
-    <!-- Login Dialog -->
-    <dialog id="loginDialog">
-      <form id="loginForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <button type="submit">Login</button>
-        <button type="button" id="cancelLogin">Cancel</button>
-      </form>
-    </dialog>
+<body>
+  <header>
+    <h1>Movies!</h1>
+    <!-- for 1.2 -->
+    <div id="userGreeting" class="user-greeting"></div>
+  </header>
+  <nav>
+    <h2>Genres</h2>
+    <ul id="filter"></ul>
+    <h2>Manage</h2>
+    <ul>
+      <li>
+        <button id="addMoviesBtn">Add movies</button>
+      </li>
+      <li>
+        <button id="authBtn">Login</button>
+      </li>
+    </ul>
+  </nav>
+  <main></main>
+  <footer>
+    <ul>
+      <li>&copy; Movies!</li>
+      <li>&#8213;</li>
+      <li>co-written by <a href="mailto:alenaroth@duck.com">Alena (sorta?)</a></li>
+      <li>&#8213;</li>
+      <li>
+        Visit us at
+        <a href="https://www.hcw.ac.at/" target="_blank">HCW</a>
+      </li>
+    </ul>
+  </footer>
 
-    <!-- Task 2.1: Add a search dialog markup. Make sure the ids of the elements 
+  <!-- Login Dialog -->
+  <dialog id="loginDialog">
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <button type="submit">Login</button>
+      <button type="button" id="cancelLogin">Cancel</button>
+    </form>
+  </dialog>
+
+  <!-- Task 2.1: Add a search dialog markup. Make sure the ids of the elements 
      match the ones used in index.js. Your dialog needs a form and submit and cancel
      buttons. -->
-    
-  </body>
+
+</body>
+
 </html>
