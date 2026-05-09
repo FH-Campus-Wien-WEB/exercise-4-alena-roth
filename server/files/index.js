@@ -89,7 +89,7 @@ function addMovie(imdbID) {
       if (response.status === 201) {
         // Task 2.2: Make sure to remove the added movie from the search results to avoid
         // giving the user the option to add it again.
-    
+
         loadMovies();
         updateGenres();
       } else if (response.status === 200) {
@@ -216,7 +216,37 @@ window.onload = function () {
     // with username and password, handle errors, save the response 
     // into `currentSession`, then call `updateUI()` and `loadMovies()`.
 
+    fetch("/login", { // server.js checks username/password; client sends+receives JSON
+      method: "POST", // POST request to backend (server.js)
+      headers: { "Content-Type": "application/json" }, // server expects JSON
+      body: JSON.stringify({ // needed for fetch() ?
+        username: formData.get("username"),
+        password: formData.get("password")
+      })
+    })
+
+      .then(response => {
+        if (!response.ok) { // first catch potential issue
+          throw new Error('HTTP ${response.status}'); // check if best way
+        }
+        return response.json();
+      })
+
+      .then(data => {
+        currentSession = data; // current session data allows greeting/whether user logged in/...
+        document.getElementById("loginDialog").close();
+        // render UI + movie list
+        updateUI();
+        loadMovies();
+      })
+
+      .catch(error => {
+        console.error("Login failed: ", error);
+        alert(messages.loginFailed);
+      }
+      )
   });
+  // own code for 1.1 ends here; tests ok
 
   document.getElementById('cancelLogin').addEventListener('click', () => {
     document.getElementById('loginDialog').close();
