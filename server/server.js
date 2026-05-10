@@ -44,6 +44,29 @@ app.post("/login", function (req, res) {
 // with error handling. Protect all endpoints that need 
 // authentication with `requireLogin`.
 
+// middleware
+function requireLogin(req, res, next) { // <-- middleware function; name + codes + session expression as given in exercise
+  if (req.session.user) { // only for active users (login) -- "destroy" to kill session (cookie); needs to be missing
+    next();
+  } else {
+    res.sendStatus(401);
+  }
+}
+
+app.get("/logout", function (req, res) {
+  req.session.destroy((err) => { // removes session (destroys user state, protects endpoints)
+    if (err) {
+      console.error("Logout failed:", err);
+      res.sendStatus(500); // internal server error
+    } else {
+      res.sendStatus(200); // ok
+    }
+  });
+}); // tested by trying to reach endpoints in url
+
+// own code for 1.3 ends here
+
+
 app.get("/session", function (req, res) {
   if (req.session.user) {
     res.send(req.session.user);
