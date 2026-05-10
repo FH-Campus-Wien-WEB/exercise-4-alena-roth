@@ -90,6 +90,11 @@ function addMovie(imdbID) {
         // Task 2.2: Make sure to remove the added movie from the search results to avoid
         // giving the user the option to add it again.
 
+
+
+        // end of added code
+
+
         loadMovies();
         updateGenres();
       } else if (response.status === 200) {
@@ -136,6 +141,10 @@ function searchMovies(query) {
       // Task 2.2: Render the results returned from the server. Make sure to
       // include an "Add" button for each result that calls `addMovie(imdbID)` when clicked.
       // There is a second part to this task, in `addMovie`
+
+
+
+      // end of added code
 
     })
     .catch(error => {
