@@ -86,12 +86,16 @@ function loadMovies(genre) {
 function addMovie(imdbID) {
   fetch(`/movies/${imdbID}`, { method: 'PUT' })
     .then(response => {
-      if (response.status === 201) {
+      if (response.status === 201) { // === true equal without 
         // Task 2.2: Make sure to remove the added movie from the search results to avoid
         // giving the user the option to add it again.
 
-
-
+        const entry = document.querySelector(
+          `[data-imdbid="${imdbID}"]`
+        )
+        if (entry) {
+          entry.remove();
+        }
         // end of added code
 
 
@@ -142,7 +146,32 @@ function searchMovies(query) {
       // include an "Add" button for each result that calls `addMovie(imdbID)` when clicked.
       // There is a second part to this task, in `addMovie`
 
+      if (results.length === 0) {
+        new ElementBuilder("p")
+          .text(messages.noResultsFound)
+          .appendTo(resultsDiv);
 
+        return;
+      }
+
+      results.forEach(movie => {
+
+        const checker = new ElementBuilder("div");
+
+        checker.element.dataset.imdbid = movie.imdbID;
+
+        checker.append(
+          new ElementBuilder("span")
+            .text(`${movie.Title} (${movie.Year})`)
+        );
+
+        checker.append(
+          new ButtonBuilder("Add")
+            .onclick(() => addMovie(movie.imdbID))
+        );
+
+        checker.appendTo(resultsDiv);
+      });
 
       // end of added code
 
@@ -184,6 +213,8 @@ window.onload = function () {
 
       // backticks for template literals (dynamic message); .toISOString() will not work without .toLocaleDate/TimeString having specification in round brackets 
       greetingElement.textContent = `Hi ${currentSession.firstName} ${currentSession.lastName}, du hast dich am ${loginDate.toLocaleDateString("de-DE")} um ${loginDate.toLocaleTimeString("de-DE")} angemeldet.`;
+
+      // end of own code for 1.2
 
     } else {
       greetingElement.textContent = messages.loggedOutGreeting;

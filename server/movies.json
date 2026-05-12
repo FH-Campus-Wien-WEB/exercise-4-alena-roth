@@ -5,6 +5,10 @@
       "Title": "Lord of War",
       "Released": "2005-09-15",
       "Runtime": 122,
+      "Plot": "An arms dealer confronts the morality of his work as he is being chased by an INTERPOL Agent.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNThlY2NkYmMtNTFhNi00MzBiLWJmNzEtZjk5MzYwYWU2MjllXkEyXkFqcGc@._V1_SX300.jpg",
+      "Metascore": 62,
+      "imdbRating": 7.6,
       "Genres": [
         "Crime",
         "Drama"
@@ -17,13 +21,8 @@
       ],
       "Actors": [
         "Nicolas Cage",
-        "Ethan Hawke",
-        "Jared Leto"
-      ],
-      "Plot": "An arms dealer confronts the morality of his work as he is being chased by an INTERPOL Agent.",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNThlY2NkYmMtNTFhNi00MzBiLWJmNzEtZjk5MzYwYWU2MjllXkEyXkFqcGc@._V1_SX300.jpg",
-      "Metascore": 62,
-      "imdbRating": 7.6
+        "Ethan Hawke"
+      ]
     },
     "tt0167260": {
       "imdbID": "tt0167260",
@@ -79,6 +78,29 @@
       "Poster": "https://m.media-amazon.com/images/M/MV5BY2RiOTM0ZDgtNDRlMi00MDMzLWI1NDYtY2NjZDM4YTkwNWVlXkEyXkFqcGc@._V1_SX300.jpg",
       "Metascore": 67,
       "imdbRating": 6.9
+    },
+    "tt12673488": {
+      "imdbID": "tt12673488",
+      "Title": "Everything's Gonna Be Alright",
+      "Released": "24 Oct 2020",
+      "Runtime": 101,
+      "Genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "Directors": [
+        "Francesco Bruni"
+      ],
+      "Writers": [
+        "Francesco Bruni"
+      ],
+      "Actors": [
+        "Kim Rossi Stuart",
+        "Lorenza Indovina",
+        "Barbara Ronchi"
+      ],
+      "Plot": "As he awaits a transplant in a hospital, the main character (based on the director) flashes back to childhood and also experiences medically induced reveries.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BYjNkYWQ5NzktNGYwZC00OWRhLThkZmEtOGE1MGFiZDQwZjc0XkEyXkFqcGdeQXVyMzQ4MDQ4ODc@._V1_SX300.jpg"
     }
   },
   "jane": {

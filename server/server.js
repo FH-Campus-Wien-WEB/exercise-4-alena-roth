@@ -108,6 +108,59 @@ app.put("/movies/:imdbID", requireLogin, function (req, res) { // added requireL
     // Task 2.3: Fetch the movie data from OmdbAPI, follow the pattern used further down 
     // in the GET /search endpoint. Implement conversion of the OmdbAPI response to the 
     // movie format used in the frontend. Make sure to handle errors and timeouts properly.
+
+    // complete re-do, closer to search endpoint
+    const url = `http://www.omdbapi.com/?apikey=${config.omdbApiKey}&i=${imdbID}` // was fetched directly before; for potential reusability as const
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), config.omdbTimeoutMs);
+
+    fetch(url, { signal: controller.signal }) // syntax by exercise Angabe
+      .then(apiRes => {
+        clearTimeout(timeoutId);
+        if (!apiRes.ok) {
+          return res.sendStatus(apiRes.status);
+        }
+        return apiRes.text().then(data => {
+          let response;
+          try {
+            response = JSON.parse(data);
+          } catch (parseError) {
+            console.error('Failed to parse OMDb response:', parseError);
+            return res.sendStatus(500);
+          }
+          if (response.Response === 'True') {
+
+            const results = response;
+            const movie = {
+              imdbID: results.imdbID,
+              Title: results.Title,
+              Released: results.Released,
+              Runtime: parseInt(results.Runtime),
+              Genres: results.Genre.split(", "),
+              Directors: results.Director.split(", "),
+              Writers: results.Writer.split(", "),
+              Actors: results.Actors.split(", "),
+              Plot: results.Plot,
+              Poster: results.Poster
+            };
+
+            movieModel.setUserMovie(username, imdbID, movie);
+            res.sendStatus(201);
+          } else {
+            res.sendStatus(404);
+          }
+        });
+      })
+      .catch((err) => {
+        clearTimeout(timeoutId);
+        if (err.name === "AbortError") {
+          console.error("Request timed out");
+          return res.sendStatus(504);
+        }
+        console.error("OMDb API error:", err);
+        res.sendStatus(500);
+      });
   } else {
     movieModel.setUserMovie(username, imdbID, req.body);
     res.sendStatus(200);
