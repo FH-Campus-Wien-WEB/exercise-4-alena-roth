@@ -79,28 +79,54 @@
       "Metascore": 67,
       "imdbRating": 6.9
     },
-    "tt12673488": {
-      "imdbID": "tt12673488",
-      "Title": "Everything's Gonna Be Alright",
-      "Released": "24 Oct 2020",
-      "Runtime": 101,
+    "tt2865558": {
+      "imdbID": "tt2865558",
+      "Title": "Kiki's Delivery Service",
+      "Released": "01 Mar 2014",
+      "Runtime": 108,
       "Genres": [
+        "Adventure",
         "Comedy",
+        "Fantasy"
+      ],
+      "Directors": [
+        "Takashi Shimizu"
+      ],
+      "Writers": [
+        "Eiko Kadono",
+        "Satoko Okudera",
+        "Takashi Shimizu"
+      ],
+      "Actors": [
+        "Fuka Koshiba",
+        "Ryohei Hirota",
+        "Machiko Ono"
+      ],
+      "Plot": "A young witch, on her mandatory year of independent life, finds fitting into a new community difficult while she supports herself by running an air courier service.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMDlhZTRjNTMtNGQ0Mi00MDJhLWJkMjctMTkzZjRiZjNhNDk1XkEyXkFqcGc@._V1_SX300.jpg"
+    },
+    "tt27503384": {
+      "imdbID": "tt27503384",
+      "Title": "Perfect Days",
+      "Released": "21 Dec 2023",
+      "Runtime": 124,
+      "Genres": [
         "Drama"
       ],
       "Directors": [
-        "Francesco Bruni"
+        "Wim Wenders"
       ],
       "Writers": [
-        "Francesco Bruni"
+        "Wim Wenders",
+        "Takuma Takasaki"
       ],
       "Actors": [
-        "Kim Rossi Stuart",
-        "Lorenza Indovina",
-        "Barbara Ronchi"
+        "Kôji Yakusho",
+        "Tokio Emoto",
+        "Arisa Nakano"
       ],
-      "Plot": "As he awaits a transplant in a hospital, the main character (based on the director) flashes back to childhood and also experiences medically induced reveries.",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BYjNkYWQ5NzktNGYwZC00OWRhLThkZmEtOGE1MGFiZDQwZjc0XkEyXkFqcGdeQXVyMzQ4MDQ4ODc@._V1_SX300.jpg"
+      "Plot": "Hirayama cleans public toilets in Tokyo, lives his life in simplicity and daily tranquility. Some encounters also lead him to reflect on himself.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNGVmODFkM2MtOTEzMy00MjFjLThjZmYtODMxZmI1MzcyNDkyXkEyXkFqcGc@._V1_QL75_UX380_CR0,7,380,562_.jpg"
     }
   },
   "jane": {
